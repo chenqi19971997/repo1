@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="../img-js/on.gif" id="light">
+<script>
+    var light=document.getElementById("light");
+    var lg=true;
+    light.onclick=function () {//匿名对象
+        if(lg){
+            light.src="../img-js/off.gif";
+            lg=false;
+        }else{
+            light.src="../img-js/on.gif";
+            lg=true;
+        }
+    }
+</script>
+</body>
+</html>

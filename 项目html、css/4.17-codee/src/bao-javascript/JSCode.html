@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--内部js-->
+<script>
+    alert("hello world");
+</script>
+<!--外部js-->
+<script src="java基础.js"></script>
+<script>
+    var a=99;
+    a=999;
+    alert(a);
+    //number(整数，小数，NaN=not a number)
+    var num=1;
+    var num2=1.1;
+    var num3=NaN;
+    // string（“”或者’‘都可以）
+    var a1="abc";
+    var a2='def';
+    // boolean、null（空占位符）、undefined
+    var b1=true;
+    var b2=null;
+    var b3=undefined;
+    var b4;
+    // 输出格式 注意br
+    document.write(num+"<br>"+num2+"<br>"+num3+"<br>"+a1+"<br>"+a2);
+    document.write(b1+"<br>"+b2+"<br>"+b3+"<br>"+b4+"<br>");
+    // typeof
+    document.write(typeof(num));
+    document.write(b2+"-----"+typeof(num));//null是object类型
+// 特殊运算符：+正号 -负号===全等于
+    var c1=+true;
+    var c2=+false;
+    document.write(c1);
+    // 特殊语法：1.每句话以分号结尾，一行只有一句，可以省略分号。
+    document.write(c2)
+    //2.用var关键字定义的是局部变量，不用则定义的是全局变量
+    var aa=110;//定义局部变量
+    bb=550;//定义全局变量
+    function fun() {
+        cc=350;
+    }
+    fun();
+    alert(aa);
+    // jsp中switch可以接受任意类型数据
+    var aaa=1;
+    switch (aaa) {
+        case 1:alert("number");
+        case "abc":alert("String");
+    }
+
+</script>
+</body>
+</html>

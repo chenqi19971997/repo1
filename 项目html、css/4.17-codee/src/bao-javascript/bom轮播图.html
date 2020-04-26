@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<img  id="img" src="../img-js/banner_1.jpg" width="100%" alt="">
+
+<script>
+    var number = 1;
+    function fun() {
+        number++;
+        if(number > 3){
+            number = 1;
+        }
+        var img=document.getElementById("img");
+        img.src="../img-js/banner_"+number+".jpg";
+    }
+    setInterval(fun,3000);//1秒过后图片被加载，所以可以用img
+</script>
+</body>
+</html>

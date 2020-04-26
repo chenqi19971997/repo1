@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        body {
+            background: url("../image-css/register_bg.png") no-repeat center;
+            padding-top: 25px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .layout {
+            height: 500px;
+            width: 900px;
+            border: 8px solid #EEEEEE;
+            padding: 15px;
+            background-color: white;
+            /*box-sizing: border-box;*/
+            margin: auto;/*使其居中*/
+            /*border-top: 80px;*/
+            margin-top: 20px;
+        }
+
+        .rg-left {
+            float: left;
+            margin: 15px;
+        }
+
+        .rg-left > p:first-child {
+            color: #ffd026;
+            font-size: 20px;
+        }
+
+        .rg-left > p:last-child {
+            color: #a6a6a6;
+            size: 20px;
+        }
+
+        .rg-center {
+            float: left;
+            /*width: 450px;*/
+        }
+
+        .rg-right {
+            float: right;
+            margin: 15px;
+        }
+
+        .rg-right > p:first-child {
+            font-size: 15px;
+        }
+
+        .td-left {
+            width: 100px;
+            height: 45px;
+            text-align: right;
+        }
+
+        .td-right {
+            padding-left: 50px;
+        }
+
+        #username, #passworld, #email, #name, #phonenumber, #birthday, #checkcode {
+            width: 250px;
+            height: 32px;
+            border: 1px solid #a6a6a6;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        #checkcode {
+            width: 110px;
+        }
+
+        #img-check {
+            height: 32px;
+            /*设置图片水平居中*/
+            vertical-align: middle;
+        }
+
+        #btn-sub {
+            width: 150px;
+            height: 40px;
+            background-color: #ffd026;
+            border: 1px solid #ffd026;
+            /*align:center;*/
+            /*vertical-align: middle;*/
+        }
+        #td_sub{
+            padding-left: 150px;
+        }
+        .error{
+            color:red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            document.getElementById("form").onsubmit=function () {
+
+                return checkUsername()&&checkPassworld();
+            }
+            document.getElementById("username").onblur=checkUsername;//注意等于的是方法对象
+            document.getElementById("passworld").onblur=checkPassworld;
+        }
+        function checkUsername() {
+            var username=document.getElementById("username").value;
+            var reg_username=/^\w{6,12}$/;
+            var flag=reg_username.test(username);
+            var s_username=document.getElementById("s_username");
+            if(flag){
+                s_username.innerHTML="√";
+            }else{
+                s_username.innerHTML="用户名格式有误";
+            }
+            return flag;
+        }
+        function checkPassworld() {
+            var passworld=document.getElementById("passworld").value;
+            var reg_passworld=/^\w{6,12}$/;
+            var flag=reg_passworld.test(passworld);
+            var s_passworld=document.getElementById("s_passworld");
+            if(flag){
+                s_passworld.innerHTML="√";
+            }else{
+                s_passworld.innerHTML="密码格式有误";
+            }
+            return flag;
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="layout">
+    <!--    div-1-->
+    <div class="rg-left">
+        <p>新用户注册</p>
+        <p>USER RIGESTER</p>
+    </div>
+    <!--    div-2-->
+    <div class="rg-center">
+        <div class="rf-form">
+            <form action="#" id="form" method="get">
+                <table>
+                    <tr>
+                        <!-- class应该写在td里面 id写在input里面-->
+                        <td class="td-left"><label for="username">用户名：</label></td>
+                        <td class="td-right"><input type="text" name="username" id="username" placeholder="请输入用户名">
+                        <span id="s_username" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="passworld">密码：</label></td>
+                        <td class="td-right"><input name="passworld" id="passworld" placeholder="请输入密码">
+                        <span id="s_passworld" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="email">Email：</label></td>
+                        <td class="td-right"><input type="email" name="email" id="email" placeholder="请输入Email"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="name">姓名：</label></td>
+                        <td class="td-right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="phonenumber">手机号：</label></td>
+                        <td class="td-right"><input type="text" name="phonenumber" id="phonenumber"
+                                                    placeholder="请输入手机号"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label>性别：</label></td>
+                        <td class="td-right"><label>
+                            <input type="radio" name="gender" value="male">
+                            男
+                        </label><label>
+                            <input type="radio" name="gender" value="female">
+                            女
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="birthday">出生日期：</label></td>
+                        <td class="td-right"><input type="date" name="birthday" id="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-left"><label for="checkcode">验证码：</label></td>
+                        <td class="td-right"><input type="text" name="birthday" id="checkcode">
+                            <img src="../image-css/verify_code.jpg" id="img-check"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="td_sub"><input type="submit" id="btn-sub" value="提交"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--    div-3-->
+    <div class="rg-right">
+        <p>已有账号？<a href="#">立即登录</a></p>
+    </div>
+</div>
+</body>
+</html>

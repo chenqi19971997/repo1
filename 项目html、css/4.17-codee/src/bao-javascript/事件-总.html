@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*window.onload=function () {
+            document.getElementById("username").onblur=function () {
+                alert("失去焦点");
+            }
+        }*/
+        /*document.getElementById("username").onmousedown=function (event) {
+            alert(event.button);
+        }*/
+       document.getElementById("username").onkeydown=function (event) {
+            if(event.keyCode==13){//回车是13
+                alert("提交表单");
+            }
+        }
+        /*
+       document.getElementById("form").onsubmit=function (event) {
+           var flag=true;
+           return flag;
+       }*/
+        function checkform() {
+            return true;
+        }
+    </script>
+</head>
+<body>
+<!--事件：单击事件onclick
+    双击事件：ondoubleclick
+    焦点事件：onfocus
+              onblur
+    加载事件：onload
+    鼠标事件：onmouseover
+            onmouseup被松开
+            onmousedown
+            onmousemove
+            onmouseout
+    键盘事件：onkeyup
+            onkeydown
+            omkeypress按下并松开
+    选择和改变：onselect
+            onchange
+    表单事件：onsubmit:可以阻止表单提交，当方法返回false
+            onreset-->
+<form action="#" id="form" onclick="return checkform();">//
+    <input id="username">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div7 {
+            border: 1px solid red;
+            width: 50px;
+            height: 50px;
+        }
+
+        #div8 {
+            border: 1px solid red;
+            width: 40px;
+            height: 40px;
+        }
+
+        #div9 {
+            border: 1px solid red;
+            width: 30px;
+            height: 30px;
+        }
+        .d1{
+            border:1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<!--dom：document object model文档对象模型
+将标记语言的各个组成部分封装为对象。可以使用这些对象，对文档进行增删改查操作
+分为核心dom（针对任何结构化文档的标准模型）:node节点对象(document文档/element元素/attribute属性/text文本/comment注释对象)
+、xml dom
+、html dom-->
+
+<!--document对象：在html dom里面可以使用window来获取
+    方法:获取element对象：getElementById、getElementsByTagName返回数组、getElementByClassName返回数组、getElementByName返回数组
+    创建其他dom对象：creatAttribute、creatComment、creatElement、creatTextNode-->
+
+<!--element对象：方法：removeAttribute删除属性、setAttribute设置属性-->
+
+<!--node对象：所有dom对象都可以被认为是一个节点
+        方法：appendChild、removeChild、replaceChild
+        属性：parentNode-->
+
+<!--innerHtml -->
+
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+<div class="cls1">div4</div>
+<div class="cls1">div5</div>
+<div name="username">div6</div>
+<div id="div7">div7
+    <div id="div8">
+        div8
+    </div>
+</div>
+<div id="div9">div9</div>
+<!--<a id="del" href="">删除子节点</a>//href为空表示本页面刷新-->
+<a id="del" href="javascript:void(0)">删除子节点</a>
+<a id="add1" href="javascript:void(0)">添加子节点</a>
+<a>点我一下到百度</a>
+<script>
+    var divs = document.getElementsByTagName("div");
+    // alert(divs.length   );
+    var div_cls = document.getElementsByClassName("cls1");
+    // alert(div_cls.length);
+    var username = document.getElementsByName("username");
+    // alert(username.length);
+    var table = document.createElement("table");
+    // alert(table);
+    //=================
+    var element_a = document.getElementsByTagName("a")[0];//需要指定数组元素
+    element_a.setAttribute("href", "http://www.baidu.com");
+    element_a.removeAttribute("href");
+    //=================
+    //node对象
+    var del = document.getElementById("del");
+    del.onclick = function () {
+        var div7 = document.getElementById("div7");
+        var div8 = document.getElementById("div8");
+        div7.removeChild(div8);
+    }
+    var add1 = document.getElementById("add1");
+    add1.onclick = function () {
+        var div7 = document.getElementById("div7");
+        var div9 = document.createElement("div");
+        div9.setAttribute("id", "div9");
+        div7.appendChild(div9);
+    }
+    var div1 = document.getElementById("div1");
+    var div2 = div1.parentNode;
+    // alert(div2);
+    //innerHtml
+    var div9 = document.getElementById("div9");
+    var innerHtml = div9.innerHTML;
+    // div9.innerHTML="<input type='text'>";
+    div9.innerHTML += "<input type='text'>";
+    //修改样式方式1,利用style属性
+    div9.onclick = function () {
+    div9.style.border="1px solid blue";
+    div9.style.fontSize="30px";
+    }
+    //修改样式方式2,通过赋予className
+    var div2222 = document.getElementById("div2");
+    div2222.onclick = function () {
+        div2222.className="d1";
+    }
+</script>
+</body>
+</html>

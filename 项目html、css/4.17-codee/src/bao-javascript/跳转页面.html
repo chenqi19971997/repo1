@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        var num = 5;
+
+        function showtime() {
+            if (num > 0) {
+            num--;}
+
+        var time = document.getElementById("time");
+        time.innerHTML = num + "";
+        if (num <= 0) {
+            num = 0;
+            location.href = "http://www.baidu.com";
+        }
+        }
+        setInterval(showtime, 1000);
+    </script>
+</head>
+<body>
+<p>
+    <span id="time">5</span>秒之后自动跳转到首页...
+</p>
+</body>
+</html>

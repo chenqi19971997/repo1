@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--dom：控制html文档内容-->
+<img src="../img-js/on.gif" id="light">
+<h1 id="title">爆炸新闻</h1>
+<!--elemant获取元素对象-->
+<script>
+    var light=document.getElementById("light");//必须写在图片加载后面才能获取到对象
+    alert("我要换图片了");
+    light.src="../img-js/off.gif"//修改属性值
+    var title=document.getElementById("title");
+    alert("我要换内容了");
+    title.innerHTML("马云或将投资壹佰亿");//修改标签内容
+</script>
+</body>
+</html>

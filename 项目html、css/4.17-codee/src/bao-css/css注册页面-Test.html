@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陈琪的注册页面7:30-8:23</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        body{
+            background: url("../image-css/register_bg.png") no-repeat center;
+            padding-top: 25px;
+        }
+        .rg-layout{
+            width:900px;
+            height:500px;
+            background-color: white;
+            border:8px solid #a6a6a6;
+            padding:15px;
+            margin:auto;
+            margin-top: 20px;
+        }
+        .rg-left{
+            float:left;
+            margin:15px;
+        }
+        .rg-left>p:first-child{
+            color:#ffd026;
+            font-size:20px;
+        }
+        .rg-left>p:last-child{
+            color:#a6a6a6;
+            font-size:20px;
+        }
+        .rg-center{
+            width:450px;
+            float:left;
+        }
+        .rg-right{
+            /*width:*/
+            float:right;
+            font-size: 15px;
+            margin: 15px;
+        }
+        .rg-left>p:first-child{
+
+        }
+        .td-left{
+            text-align: right;
+            width: 100px;
+            height: 45px;
+        }
+        .td-right{
+            text-align: left;
+            padding-left: 50px;
+        }
+        #username, #passworld, #email, #name, #phonenumber, #birthday, #checkcode {
+            width: 250px;
+            height: 32px;
+            padding-left: 10px;
+            border:1px solid #a6a6a6;
+            border-radius: 5px;
+        }
+        #checkcode{
+            width: 110px;
+        }
+        #check-img{
+            height: 32px;
+            vertical-align: middle;
+            margin: 15px;
+        }
+        #submit{
+            background-color: #FFD026;
+            width: 150px;
+            height: 40px;
+            border: 1px solid #FFD026;
+            vertical-align: middle;
+        }
+        #login{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--最外面的大盒子-->
+<div class="rg-layout">
+<!--    第一个小盒子-->
+    <div class="rg-left">
+        <p>新用户注册</p>
+        <p>user register</p>
+    </div>
+<!--    第二个小盒子-->
+    <div class="rg-center">
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td class="td-left"><label for="username">用户名：</label></td>
+                    <td class="td-right"><input type="text" name="username" id="username" placeholder="请输入用户名"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="passworld">密码：</label></td>
+                    <td class="td-right"><input type="password" name="passworld" id="passworld" placeholder="请输入密码"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="email">Email：</label></td>
+                    <td class="td-right"><input type="email" name="email" id="email" placeholder="请输入Email"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="name">姓名：</label></td>
+                    <td class="td-right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="phonenumber">手机号：</label></td>
+                    <td class="td-right"><input type="text" name="phonenumber" id="phonenumber" placeholder="请输入手机号"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label>性别：</label></td>
+                    <td class="td-right"><input type="radio" name="gender" value="male">男
+                        <input type="radio" name="gender" value="female">女</td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="birthday">出生日期：</label></td>
+                    <td class="td-right"><input type="date" name="birthday" id="birthday"></td>
+                </tr>
+                <tr>
+                    <td class="td-left"><label for="checkcode">验证码：</label></td>
+                    <td class="td-right"><input type="text" name="birthday" id="checkcode"><img src="../image-css/verify_code.jpg" id="check-img"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" ><!--align="center" --><input type="submit" value="提交" id="submit"></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+<!--    第三个小盒子-->
+    <div class="rg-right">
+        <p><label>已有账号？</label><a href="#"  id="login"><label>立即登录</label></a></p>
+    </div>
+</div>
+</body>
+</html>

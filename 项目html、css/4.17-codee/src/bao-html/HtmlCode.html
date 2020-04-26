@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<!--    html完成内容展示
+        css完成样式控制
+        jsp让页面有动态效果
+
+        javawewb：使用java语言开发基于互联网的项目
+        软件架构：c/s客户端/服务器
+                 b/s浏览器/服务器
+                    静态资源：html,css,jsp
+                    /动态资源:jsp/servlet,php,asp
+        html：hyper text markup language超文本标记语言
+            围堵标签/自闭合标签
+            不区分大小写
+            文件/文本/图片/列表/链接/表格标签
+
+   -->
+<head>
+    <meta charset="UTF-8"><!--UTF-8使其支持中文-->
+    <title>Title</title>
+</head>
+<body>
+<!--ctrl+/=本行注释-->
+<font color="red">hello</font><br/>
+<h1>黑马程序员</h1><!--h1包含换行-->
+<h2>黑马程序员</h2>
+<h3>黑马程序员</h3>
+<h4>黑马程序员</h4>
+<h5>黑马程序员</h5>
+<h6>黑马程序员</h6>
+<p>这是一个段落。。。</p>
+<p>这是第二段。。。。</p><!--此处不能加颜色属性-->
+<hr color="green" width="500" size="5"/><!--作用为显示一条水平线，可以加颜色-->
+<hr width="200" align="left"/>
+<hr width="200" align="center"/>
+<hr width="200" align="right"/>
+<hr width="50%" color="blue"/><!--相对于父2元素占百分之五十-->
+<font size="5" face="楷体">正常字体</font><br>
+<b>加粗字体</b><br>
+<i>斜体</i><br>
+<font color="#0000FF">测试红绿蓝色配</font>
+<center>
+    <font color="aqua">测试文本居中</font>
+</center>
+<!--黑马公司-->
+<header>
+    <div id="header">
+        <h1>公司简介</h1>
+    </div>
+</header>
+
+<hr color="yellow" width="100%"/>
+
+<div id="bodyer">
+    <p>
+        <font color="red">&nbsp;&nbsp;"中关村传智播客黑马训练营"</font>
+        <font>是由</font>
+        <b><i>传智播客</i></b>
+        <font>balalala...</font>
+    </p>
+    <p>
+        这是第二段
+    </p>
+</div>
+
+<hr color="yellow" width="100%"/>
+
+<footer>
+    <div id="footer">
+        <center>
+            <font color="#d3d3d3" size="2">&copy;版权归黑马训练营所有</font><!--&copy为特殊字符-->
+        </center>
+    </div>
+</footer>
+
+<img src="../Image-img/8_r.jpg" width="300" alt="图片加载错误"><!--html5不支持align-->
+<!--./代表当前目录../为上一级目录-->
+<ol type="I">
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</ol>
+<ul type="square"><!--type有disc、square、circle三种-->
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</ul>
+<a href="http://www.baidu.com" target="_blank">百度一下</a>
+<a href="mailto:itcast@itcast.cn" target="_blank">联系我们</a>
+<span>行内标签</span>
+<div>块级标签</div>
+<table border="1" width="40%" cellpadding="5" cellspacing="0" bgcolor="#f0ffff">
+    <!--cellspacing指定单元格间的距离-->
+    <thead>
+    <caption>学生信息表</caption>
+    </thead>
+    <tbody bgcolor="aqua" align="center">
+    <tr>
+        <th rowspan="2">姓名</th>
+        <th>年龄</th>
+        <th>学号</th>
+    </tr>
+    <tr >
+        <th>年龄</th>
+        <th>学号</th>
+    </tr>
+    <tr >
+        <td>cc</td>
+        <td>12</td>
+        <td>2017108</td>
+    </tr>
+    <tr>
+        <td>gg</td>
+        <td>20</td>
+        <td>2020109</td>
+    </tr>
+    <td colspan="3">列表尾</td>
+    </tbody>
+
+</table>
+</body>
+</html>

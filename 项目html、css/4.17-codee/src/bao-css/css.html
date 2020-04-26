@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--内部样式-->
+    <style>/*div是选择器*/
+    div {
+        color: aqua;
+    }
+    </style>
+    <!--外部样式-->
+    <!--方式一-->
+    <link rel="stylesheet" href="CssCode.css">
+    <!--方式二-->
+    <style>
+        @import "CssCode.css";
+    </style>
+    <!--    id选择器：选择具体的id属性值的元素-->
+    <style>
+        #div1 {
+            color: black;
+        }
+        /*元素选择器:选择具有相同标签名称的元素*/
+        div{
+            color: slategray;
+        }
+        /*类选择器：选择具有相同class属性值的元素*/
+        .class1{
+            color: aquamarine;
+        }
+        /*子选择器：筛选选择器1下的选择器2元素*/
+        div p{
+            font-size: large;
+        }
+        /*父选择器：筛选选择器2的父选择器1*/
+        div>p{
+            border: 1px solid;
+        }
+        /*属性选择器：选择元素名称，属性名=属性值的元素*/
+        input[type='text']{
+            border:5px solid;
+        }
+        a:link{
+            color: pink;
+        }
+        a:hover{
+            color: hotpink;
+        }
+        a:active{
+            color: deeppink;
+        }
+        a:visited{
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<!--内联样式-->
+<div style="color: red;"> hello css</div>
+<!--内部样式-->
+<div>hello hello</div>
+<!--外部样式-->
+<!--在外部文件定义样式，然后在head里面使用link-->
+<div>hehe...</div>
+<!--id选择器：选择具体的id属性值的元素-->
+<div id="div1">id选择器</div>
+<!--类选择器：选择具有相同class属性值的元素-->
+<p class="class1">heihei..</p>
+<!--子选择器：筛选选择器1下的选择器2元素-->
+<div>
+    <p>子类选择标签</p>
+</div>
+<!--属性选择器：选择元素名称，属性名=属性值的元素-->
+<input type="text">
+<!--伪类选择器：选择一些元素具有的状态-->
+<a href="#">baidu</a>
+</body>
+</html>

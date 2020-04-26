@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--bom=broswer object model浏览器对象模型-->
+<!--组成对象：-->
+<!--        navigator：浏览器对象-->
+<!--        screen：显示器屏幕对象-->
+<!--        history：历史记录对象-->
+<!--        window：窗口对象-->
+<!--        location：地址栏对象-->
+<!--====================================-->
+<input type="button" value="打开新窗口" id="btn">
+<input type="button" value="关闭新窗口" id="closebtn">
+
+<!--winodw对象可以不创建直接使用，window引用可以省略-->
+<!--方法：弹出框alert、confirm、prompt  打开关闭：open、close调用其的对象关闭
+            定时器：setTimeout cleartimeout setInterval按指定周期调用函数或计算表达式
+            clearInterval 都返回唯一标识-->
+<!--window对象属性：获取其他dom对象。或者调用dom对象document-->
+<!--location对象方法reload 属性href-->
+<!--history对象 属性：length返回当前窗口列表中的历史数量
+                方法：back、forward、go-->
+<!--<script>
+    // 弹出框
+    window.alert("hello");
+    var flag=confirm("你确定要退出吗？");
+    alert(flag);//true或者false
+    if(flag){
+        alert("欢迎再次光临");
+    }else{
+        alert("手别抖。。");
+    }
+    var result=prompt("请输入用户名");//会提交
+    alert(result);
+
+    var newWindow;
+    var btn=document.getElementById("btn");
+    btn.onclick=function () {
+        newWindow=open("http://www.baidu.com");//返回值为新窗口对象
+    }
+    var closebtn=document.getElementById("closebtn");
+    closebtn.onclick=function () {
+        newWindow.close();
+    }
+    //
+    var id1=setTimeout("alert('boom...')",2000);
+    clearTimeout(id1);
+    function fun() {
+        alert("boom...");
+    }
+    var id2=setInterval(fun,2000);
+    clearInterval(id2);
+    &lt;!&ndash;属性：获取其他dom对象&ndash;&gt;
+    var aaa=window.history;
+    // 或者调用dom对象document
+    window.document.getElementById("");
+
+</script>-->
+<!--//==================================================-->
+<!--reload-->
+<input type="button" id="btn2" value="刷新">
+<input type="button" id="btn3" value="去百度">
+<input type="button" value="获取历史个数" id="his">
+<script>
+    var btn2=document.getElementById("btn2");
+    btn2.onclick=function () {
+        location.reload();
+    }
+    var btn3=document.getElementById("btn3");
+    btn3.onclick=function () {
+        location.href="http://www.baidu.com";
+    }
+    var btn4=document.getElementById("his");
+    btn4.onclick=function () {
+        var length=history.length;//同理可做forward、back、go按钮。写history.forward();
+                                  //    /history.back()/history.go(数字)；
+        alert("个数"+length);
+    }
+
+</script>
+</body>
+</html>

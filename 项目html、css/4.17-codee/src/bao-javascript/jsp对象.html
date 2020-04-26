@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--基本对象：function函数对象、array、boolean、date、math、number、String、rgexp、global-->
+<!--function创建方式1-->
+<script>
+    var fun1 = new Function("a", "alert(a)");
+    fun1(199);
+
+<!--function创建方式2-->
+    function fun2(a, b) {
+        // alert(a + b);
+    }
+    fun2(5, 5);
+<!--function创建方式3-->
+    var fun3=function (a,b) {
+        // alert(a+b);
+    }
+    fun3(10,10);
+// length代表形参个数
+//     alert(fun3.length);
+// jsp里面方法可以重名重参数。会覆盖之前的方法。
+    var fun3=function (a,b) {
+        // alert(a+b);
+        // alert(arguments[0]);
+        // alert(arguments[1]);
+        var sum=0;
+        for(var i=0;i<arguments.length;i++){
+            sum+=arguments[i];
+        }
+        // alert("sum:"+sum);
+    }
+    // 参数可以少传或不传或多传。没传的默认为undefined。参数有一个默认数组arguments接受
+    fun3(110);
+    /*=============================*/
+    // array对象
+    // 3种创建方式：
+    var a=1;
+    var b=2;
+    var c=3;
+    // 数组类型可变
+    var arr=new Array(1,2,3.2,true);
+    var arr2=new Array(3);//只有一个元素，则代表数字为数组长度
+    var arr3=[a,b,c];
+    document.write(arr+"<br>");
+    document.write(arr2+"<br>");
+    document.write(arr3+"<br>");
+    // 数组长度可变
+    document.write(arr[4]+"<br>");//自动扩容为4个长度
+    // join将数组按照指定分隔符连接成字符串
+    document.write(arr.join("#")+"<br>");
+    // push向数组尾部添加元素，返回新的长度
+    arr.push(11,111,1111);
+    document.write(arr.join("#")+"<br>");
+    // ====================================
+    // date对象
+    var date=new Date();
+    document.write(date.toLocaleString());
+    document.write(date.getTime()+"<br>");
+    //=====================================
+    // math对象
+    document.write(Math.PI+"<br>");
+    // random产生0-1间的随机数,包含0，不包含1
+    document.write(Math.random()+"<br>");
+    document.write(Math.round(3.45)+"<br>");
+    // 向上取整
+    document.write(Math.ceil(3.45)+"<br>");
+    // 向下取整
+    document.write(Math.floor(3.45)+"<br>");
+    // 产生1-100随机数
+    var number=Math.floor(Math.random()*100)+1;
+    document.write("随机数："+number+"<br>");
+    //======================================
+    //regexp正则表达式对象：定义字符串的组成规则
+    // 单个字符：[] 如[a-zA-Z0-9_]  \d代表数字\w代表字母
+    // 量词符号：？表示出现0次或1次
+    //          *表示出现0次或多次
+    //          +表示出现1次或多次
+    //          {m,n}m<=数量<=n
+    //          {m,}最少m次
+    //          {,n}最多n次
+    //正则对象的创建,以^开始，以$结尾
+    var reg=new RegExp("^\\d{1,10}$");
+    var reg2=/^\d{1,10}$/;
+    alert(reg);
+    alert(reg2);
+    //test验证字符串是否符合正则表达式定义规范
+    var kk=9;
+    alert(reg.test(kk));
+    //=====================================
+    //global全局对象，包含的方法不需要对象就可以直接调用
+    var str="传智播客";
+    document.write(encodeURI(str)+"<br>");//url编码
+    document.write(decodeURI(str)+"<br>");//url解码
+    document.write(encodeURIComponent(str)+"<br>");//url编码，编码字符更多
+    document.write(decodeURIComponent(str)+"<br>");//url解码
+    //将字符串中的不是数字为止的字符前面的数字转为number
+    document.write(parseInt("123abc45")+"<br>");//123
+    document.write(parseInt("abc123abc45")+"<br>");//NaN
+    //isNaN判断一个变量是不是NaN类型
+    //NaN与自己比较相等返回false
+    var ll=NaN;
+    document.write(ll==NaN+"<br>");//false
+    document.write(isNaN(ll)+"<br>");//true
+    //eval计算js字符串，并把它当做脚本代码来执行
+    var str2="alert(123)";
+    eval(str2);
+
+
+</script>
+</body>
+</html>

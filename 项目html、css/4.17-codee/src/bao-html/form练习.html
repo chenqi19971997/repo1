@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单练习</title>
+</head>
+<body>
+<!--form-->
+<!--    action:指定提交数据的URL-->
+<!--    method:指定数据的提交方式（get请求参数会在地址栏显示 请求参数大小有限制 不太安全
+            /post请求参数不会在地址栏显示 请求参数大小，没有限制 比较安全）-->
+<!--表单要指定name属性才能被提交-->
+<!--type种类：text、passworld、radio单选框、checkbox复选框-->
+<form action="#" method="get">
+    <label>用户名：</label><input type="text" name="username" placeholder="请输入用户名"><br><!--placeholder指定提示信息-->
+    <label for="pass">密码:</label><input type="password" name="password" placeholder="请输入密码" id="pass"><br>
+    <!--lable的for对应input的id-->
+    性别： <input type="radio" name="gender" value="man">男<!--value指定提交的属性-->
+    <input type="radio" name="gender" value="woman">女<br>
+    爱好： <input type="checkbox" name="hobby" value="shopping">逛街<!--value指定提交的属性-->
+    <input type="checkbox" name="hobby" value="drink" checked="checked">喝酒<br><!--checked表示默认选中-->
+    上传图片：<input type="file" name="file"><br>
+    隐藏域：<input type="hidden" name="hidde" value="hehe..."><br>
+    取色器：<input type="color" name="color"><br>
+    生日：<input type="date" name="birthday"><br>
+    邮箱：<input type="email" name="email"><br>
+    年龄：<input type="age" name="age"><br>
+    省份：<select name="province"><br>
+    <option value="0" selected>四川</option>
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+    <option value="3">广州</option><!--selected表示默认选中-->
+</select><br>
+    自我描述：<textarea rows="5" cols="20"></textarea><br>
+    输入当前时间：<input type="datetime-local" name="today"><br>
+    <input type="image" src="../Image-img/icon_4.jpg"><br><!--image为图片提交按钮-->
+    <input type="submit" value="登录"><br>
+</form>
+</body>
+</html>

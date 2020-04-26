@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fun() {
+            alert('我被点了')
+        }
+        var light2=document.getElementById("light2");
+        light2.onclick=fun();
+    </script>
+</head>
+<body>
+<!--事件：某些组件被执行，触发一些事件的执行-->
+<!--绑定事件：1.直接在html标签上指定事件属性 2.通过id调用方法-->
+<!--onclick单击事件-->
+<!--<img src="../img-js/on.gif" id="light" onclick="alert('我被点了')">-->
+<img src="../img-js/on.gif" id="light" onclick="fun()">
+<img src="../img-js/on.gif" id="light2">
+
+</body>
+</html>
